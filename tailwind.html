@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hero Page</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/glidejs@3.4.1/dist/glide.min.js"></script>
+    <!-- <link rel="stylesheet" href="./output.css"> -->
+<style>
+    .trans{
+        transition: 0.6s ease-in-out;
+    }
+    .trans:hover{
+        transition: 0.6s ease-in-out;
+        transform: scale(1.2);
+    }
+    ul>li{
+        border-radius: 20px;
+        
+    }
+    ul>li:hover{
+        background-color: blue;
+    }
+    nav{
+      z-index: 3;
+        height: 10vh;
+        background-color: transparent;
+    }
+    /* carasole css */
+    .carousel {
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            width:100%; /* Adjust the width as needed */
+            position: relative;
+        }
+        
+        .slides, .slides2 {
+              
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+          
+          .slide {
+
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+          }
+         
+          
+         .slide>img {
+            width: 80%;
+            height: 60vh;
+            /* border: 2px solid red; */
+            object-fit: cover;
+            display: block;
+            transition: 0.7s ease-in-out;
+          }
+         
+          
+          
+          /* Radio button navigation */
+          .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+          }
+          
+          input[type="radio"] {
+            display: none;
+          }
+          
+          input[type="radio"]:checked ~ .slides {
+            transform: translateX(0%);
+          }
+          
+          input[type="radio"]:nth-child(2):checked ~ .slides {
+            transform: translateX(-100%);
+          }
+          
+          input[type="radio"]:nth-child(3):checked ~ .slides {
+            transform: translateX(-200%);
+          }
+
+          
+          
+          input[type="radio"]:checked ~ .slides2 {
+            transform: translateX(0%);
+          }
+          
+          input[type="radio"]:nth-child(2):checked ~ .slides2 {
+            transform: translateX(-100%);
+          }
+          
+          input[type="radio"]:nth-child(3):checked ~ .slides2 {
+            transform: translateX(-200%);
+          }
+          
+          /* Navigation labels (dots) */
+          .navigation label {
+            cursor: pointer;
+            border: 1px solid #333;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+          }
+          
+          input[type="radio"]:checked + .navigation label {
+            background-color: #333;
+            transition: background-color 0.3s ease-in-out;
+          }
+
+          /* animation */
+          .hidden1{
+            opacity: 0;
+           
+            /* filter: blur(5px); */
+            transform:  translateY(-100%) translateX(-100%) ;
+            
+            transition: all 1s;
+        }
+        .show{
+            opacity: 1;
+          
+            transition:all 1s;
+            filter: blur(0);
+            transform: translate(0%) ;
+            
+            /* background-color: rgb(4, 140, 140); */
+        }
+      
+</style>
+</head>
+<body class="bg-gray-100 ">
+
+    <!-- navbar -->
+    <nav>
+        <div class="btn-wrap">
+            <button id="menu-btn">=</button>
+        </div>
+        <div class="nav-wrap">
+            <ul id="menu-toogle">
+                <li class=" hover:bg-blue-300 m-2 p-4 bg-teal-300"><a href="#">PortFolio</a></li>
+                <li class=" hover:bg-blue-300 m-2 p-4 bg-teal-300"><a href="#">Contacts</a></li>
+                <li class=" hover:bg-blue-300 m-2 p-4 bg-teal-300"><a href="#">About</a></li>
+                <li class=" hover:bg-blue-300 m-2 p-4 bg-teal-300"><a href="#">Projects</a></li>
+                <li class=" hover:bg-blue-300 m-2 p-4 bg-teal-300"><a href="#">Home</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <!-- Hero Section -->
+    <section class="hidden1 bg-blue-500 text-white py-20">
+        <div class="container mx-auto  text-center">
+            <h1 class="text-4xl font-semibold">Welcome to Our Website</h1>
+            <p class="mt-4 text-lg">Discover amazing content and services.</p>
+            <button class="mt-6 px-6 py-3 bg-white text-blue-500 hover:bg-blue-700 hover:text-white rounded-full shadow-md transition duration-300 ease-in-out">Get Started</button>
+        </div>
+    </section>
+
+    <h1 class="hidden1 w-full p-4 font-bold text-2xl text-center">Choose The Images For You</h1>
+    <!-- Rest of your content goes here -->
+    <div class="container flex justify-center items-center flex-wrap bg-white h-full w-full  ">
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../bitcoin.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+            
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            
+            <img src="../bitcoin.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../portfolio-4.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../portfolio-2.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../portfolio-1.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../instagram.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../bitcoin.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+        <div class="hidden1 w-auto trans shadow-lg my-4 bg-whitesmoke  rounded-lg mx-4 p-6">
+            <img src="../bg.jpg" class="w-full h-32 object-cover rounded-lg" alt="">
+            <h2 class="font-semibold mt-4 text-2xl">Hello Asit </h2>
+            <h3 class="text-gray-600 text-sm mt-2">i Have MAde in Taiwind css</h3>
+
+        </div>
+       
+
+    </div>
+<!-- carasole -->
+
+<div class="carousel hidden1">
+    <input type="radio" name="slide" id="slide-1" checked>
+    <input type="radio" name="slide" id="slide-2">
+    <input type="radio" name="slide" id="slide-3">
+    
+    <div class="slides">
+      <div class="slide">
+        <img src="../portfolio-4.jpg" alt="Slide 1">
+       
+      </div>
+      <div class="slide">
+        <img src="../portfolio-9.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="../portfolio-2.jpg" alt="Slide 3">
+      </div>
+    </div>
+    
+    <div class="navigation">
+      <label for="slide-1"></label>
+      <label for="slide-2"></label>
+      <label for="slide-3"></label>
+    </div>
+  </div>
+
+    <!-- footer section -->
+    <footer class="hidden1 bg-gray-800 text-white py-8">
+        <div class="container mx-auto flex flex-col items-center">
+            <!-- Social Media Icons -->
+            <div class="mb-4">
+                <a href="#" class="text-gray-400 hover:text-white mr-4">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white mr-4">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://wa.me/1234567890" class="text-gray-400 hover:text-white mr-4">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <!-- Copyright text -->
+            <p class="text-sm text-gray-400">&copy; 2023 Your Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+ 
+    <!-- Initialize Glide.js -->
+
+
+    <script>
+      
+
+        const menu_toogle=document.getElementById("menu-toogle")
+        const menu_btn=document.getElementById("menu-btn")
+        // if(window.innerWidth)
+        console.log(window.innerWidth)
+        menu_btn.addEventListener("click",()=>{
+            console.log(menu_toogle.style.height)    
+                if(menu_toogle.style.height==='90vh'){
+                    menu_toogle.style.height='0vh'
+                    
+                }
+                else{
+                    menu_toogle.style.height='90vh'
+                    
+                    
+                }
+        })
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth' // Add smooth scrolling behavior
+      });
+    }
+  });
+});
+
+// animation
+
+const observer=new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            console.log("entry")
+            if(entry.isIntersecting){
+                entry.target.classList.add("show")
+            }
+            else{
+                entry.target.classList.remove('show')
+            }
+        })
+    })
+
+    const hiddenElements=document.querySelectorAll(".hidden1");
+
+    hiddenElements.forEach((e1)=> observer.observe(e1))
+    </script>
+</body>
+</html>

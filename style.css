@@ -1,0 +1,217 @@
+
+.center-items,nav ul,#menu-btn,.btn-wrap,.carosole-nav,.carosole-nav .arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    width: 100%;
+    height: 7vh;
+    /* background-color: black; */
+    background-color: rgb(43, 68, 124);
+    color: White;
+    font-size: large;
+    position: fixed;
+    /* overflow: hidden; */
+    
+}
+
+nav ul{
+    height: 100%;
+    /* border: 2px solid green; */
+    top: 50%;
+    left: 50%;
+    justify-content: right;
+    margin-right: 30px ;
+}
+nav ul li{
+    padding: 10px;
+    
+    
+    
+}
+nav ul li:hover{
+    
+    
+    /* border-bottom: 2px solid rgb(221, 202, 219); */
+}
+#menu-btn{
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    color: black;
+    position: absolute;
+    
+    z-index: 2;
+}
+.btn-wrap{
+    display: none;
+    width: 0;
+}
+
+.carousel {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width:100%; /* Adjust the width as needed */
+    position: relative;
+}
+
+.slides, .slides2 {
+      
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  /* .content{
+    position: absolute;
+   background: linear-gradient(45deg,transparent,rgb(155, 143, 143),transparent);
+    width: 35%;
+    top: 60%;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    opacity: 0.8;
+    text-shadow: 0px 2px 5px 0px gray;
+  } */
+  
+ .slide>img {
+    width: 80%;
+    height: 60vh;
+    /* border: 2px solid red; */
+    object-fit: cover;
+    display: block;
+    transition: 0.7s ease-in-out;
+  }
+ 
+  
+  
+  /* Radio button navigation */
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  input[type="radio"]:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  
+  input[type="radio"]:nth-child(2):checked ~ .slides {
+    transform: translateX(-100%);
+  }
+  
+  input[type="radio"]:nth-child(3):checked ~ .slides {
+    transform: translateX(-200%);
+  }
+
+  
+  
+  input[type="radio"]:checked ~ .slides2 {
+    transform: translateX(0%);
+  }
+  
+  input[type="radio"]:nth-child(2):checked ~ .slides2 {
+    transform: translateX(-100%);
+  }
+  
+  input[type="radio"]:nth-child(3):checked ~ .slides2 {
+    transform: translateX(-200%);
+  }
+  
+  /* Navigation labels (dots) */
+  .navigation label {
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+  }
+  
+  input[type="radio"]:checked + .navigation label {
+    background-color: #333;
+    transition: background-color 0.3s ease-in-out;
+  }
+@media screen and (max-width: 868px) {
+.content{
+    width: 80%;
+}
+.slide>img {
+    height: 40vh;
+}
+#menu-btn{
+left: 2%;
+border-radius: 30%;
+background-color: white;
+/* box-shadow: 0px 4px 8px rgba(0, 0, 0 0.2); */
+color: black;
+}
+nav{
+background-color: whitesmoke;
+}
+nav ul{
+  list-style: none;
+    margin-top: 30vh;
+    justify-content:center;
+    flex-direction: column;
+    width: 80%;
+    height: 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    /* opacity: 0.5; */
+    transition: 1s ease-in-out;
+    margin: 20px auto;
+}
+nav ul li{
+    margin-top: 3vh;
+    text-align: center;
+    width: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    /* border-radius: 20px; */
+    /* box-shadow: 0px 5px 5px gray; */
+    background-color: whitesmoke;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0 0.2);
+    color: black;
+    transition: 1s;
+}
+nav ul li:hover{
+    transition: 1s;
+    background-color: whitesmoke;
+    color: black;
+    transform: scale(1.2);
+}
+.btn-wrap{
+    display: flex;
+    width: auto;
+    justify-content: left;
+    height: 100%;
+}
+.nav-wrap{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    
+}
+
+}
